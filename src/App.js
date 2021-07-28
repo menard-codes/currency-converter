@@ -17,12 +17,11 @@ export default function App() {
   useEffect(() => {
     const url = `https://v6.exchangerate-api.com/v6/${process.env.REACT_APP_API_KEY}/pair/${base.value}/${pair.value}/${baseAmount}`;
     axios.get(url).then(res => {
-      // console.log(`1 USD : ${res.data.conversion_result} EUR`);
       setConversion(res.data.conversion_result);
     }).catch(() => {
       // no error handling yet
     })
-  }, [baseAmount, base]);
+  }, [baseAmount, base, pair]);
 
   const handleReverse = () => {
     const newBase = pair;
@@ -32,26 +31,35 @@ export default function App() {
   }
 
   return (
-    <div>
-      <h1>Currency Converter</h1>
-      <h3>From</h3>
-      <input
-        value={baseAmount}
-        onChange={e => setBaseAmount(e.target.value)}
-      />
-      <Select
-        options={currencyCodes}
-        value={base}
-        onChange={setBase}
-      />
-      <button onClick={handleReverse}>Reverse</button>
-      <h3>To</h3>
-      <p>{conversion}</p>
-      <Select
-        options={currencyCodes}
-        value={pair}
-        onChange={setPair}
-      />
+    <div className="container">
+      <header>
+        <h1>Currency Converter</h1>
+      </header>
+
+      <main>
+        <header>
+          <h3>From</h3>
+        </header>
+
+          <input
+            value={baseAmount}
+            onChange={e => setBaseAmount(e.target.value)}
+            />
+          <Select
+            options={currencyCodes}
+            value={base}
+            onChange={setBase}
+            />
+          <button onClick={handleReverse}>Reverse</button>
+          <h3>To</h3>
+          <p>{conversion}</p>
+          <Select
+            options={currencyCodes}
+            value={pair}
+            onChange={setPair}
+            />
+
+        </main>
     </div>
   );
 }
