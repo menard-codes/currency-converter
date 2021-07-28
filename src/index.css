@@ -11,6 +11,7 @@ body {
   background: linear-gradient(23deg, rgba(2,0,36,0.91) 0%, rgba(9,9,121,0.91) 36%, rgba(0,202,244,0.91) 100%) no-repeat; 
   display: grid;
   align-items: center;
+  overflow: hidden;
 }
 
 @media (min-width: 720px) {
