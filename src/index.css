@@ -7,8 +7,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
   height: 100vh;
-  background: rgb(2,0,36);
-  background: linear-gradient(23deg, rgba(2,0,36,0.91) 0%, rgba(9,9,121,0.91) 36%, rgba(0,202,244,0.91) 100%) no-repeat; 
+  background-color: #79b9bd;
+  background: linear-gradient(253deg, #79b9bd, #1ab757);
+  /* background: linear-gradient(23deg, rgba(2,0,36,0.91) 0%, rgba(9,9,121,0.91) 36%, rgba(0,202,244,0.91) 100%) no-repeat;  */
   display: grid;
   align-items: center;
   overflow: hidden;
